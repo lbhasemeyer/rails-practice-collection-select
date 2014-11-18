@@ -30,6 +30,11 @@ class EmploymentsController < ApplicationController
     end
   end
 
+  def destroy
+    @employment = Employment.find(params[:id])
+    @employment.destroy
+    redirect_to Employment
+    end
   private
 
   def employment_params
